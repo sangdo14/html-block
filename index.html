@@ -4,38 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Html 등록요소</title>
+    <style>
+      h1,
+      h2,
+      h3 {
+        border: 1px solid red;
+      }
+      p {
+        border: 2px solid green;
+      }
+      ol,
+      ul {
+        border: 1px solid blue;
+        width: 400px;
+      }
+      div {
+        border: 1px solid black;
+        width: 1000px;
+      }
+    </style>
   </head>
   <body>
-    <!-- 주석 내용 -->
-    <!-- 주석 내용 (단축키: ctrl + '/') -->
-    <h1>제목1</h1>
-    <h2>제목2</h2>
-    <h3>제목3</h3>
-    <h4>제목4</h4>
-    <h5>제목5</h5>
-    <h6>제목6</h6>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
-      perferendis?
-    </p>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure vel nulla
-      beatae consequuntur autem mollitia repudiandae itaque neque adipisci, id
-      eligendi cum dolore ipsam eos inventore eveniet debitis amet quae at? Qui,
-      repudiandae. Optio vitae ipsum mollitia maxime beatae, dolorum voluptatem
-      quam sequi, dolore earum ullam in ut consequuntur impedit.
-    </p>
-    <ol>
-      <li>리스트</li>
-      <li>리스트</li>
-      <li>리스트</li>
-    </ol>
+    <!-- 
+        블록 요소 태그의 특징
+        1. 넓이값 미 지정시 무조건 부모요소의 넓이 100% 자동 할당
+        2. 무조건 줄바꿈 처리됨
+        3. 넓이, 높이 변경가능
+        4. 블록요소는 블록, 인라인 모두 감쌀 수 있음
 
-    <!-- UnOrdered list: 순서가 중요하지 안은 목록  -->
-    <ul>
-      <li>리스트</li>
-      <li>리스트</li>
-      <li>리스트</li>
-    </ul>
+        p태그는 초록색 실선 적용
+        ol, ul태그는 파란색 실선 적용
+
+        블록요소의 주 사용 목적
+        : 화면을 덩어리별로 구분해서 영역을 잡기 위함
+    -->
+    <!--
+        div(division)
+        - 화면 분할해서 레이아웃 설정시
+        - 여러 관련요소들을 하나로 그룹화 할때
+      -->
+    <div>
+      <h1>제목1</h1>
+      <h2>제목2</h2>
+      <h3>제목3</h3>
+      <h4>제목4</h4>
+      <h5>제목5</h5>
+      <h6>제목6</h6>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure vel nulla
+        beatae consequuntur autem mollitia repudiandae itaque neque adipisci, id
+        eligendi cum dolore ipsam eos inventore eveniet debitis amet quae at?
+        Qui, repudiandae. Optio vitae ipsum mollitia maxime beatae, dolorum
+        voluptatem quam sequi, dolore earum ullam in ut consequuntur impedit.
+      </p>
+      <ol>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+      </ol>
+      <!-- UnOrdered list: 순서가 중요하지 안은 목록  -->
+      <ul>
+        <li>리스트</li>
+        <li>리스트</li>
+        <li>리스트</li>
+      </ul>
+    </div>
   </body>
 </html>
