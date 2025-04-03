@@ -3,7 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>실습 예제: 취업용 프로필 페이지 제작작</title>
+    <title>실습 예제: 취업용 프로필 페이지 제작</title>
   </head>
-  <body></body>
+  <body>
+    <!-- header -->
+    <div>
+      <h1><a href="#" title="인트로 페이지 이동">SANG-DO NAM</a></h1>
+      <ul>
+        <li><a href="#">about me</a></li>
+        <li><a href="#">My works</a></li>
+        <li><a href="#">Diary</a></li>
+        <li><a href="#">Join</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+    <!-- contents -->
+    <div>
+      <h1>남상도</h1>
+      <img src="img/picUser.jpg" width="400" alt="남상도 프로필 이미지" />
+      <p>
+        저는 기업용 솔루션 기획 및 운영 경험을 바탕으로 AI 프로젝트 매니저에
+        도전하는 지원자입니다. 한국자산평가 솔루션기획팀에서 서비스기획,
+        고객기술지원, 데이터관리 업무를 수행하며 금융 솔루션에 대한 실무 경험을
+        쌓았습니다. 특히 8개 금융사의 문서 자동화 프로젝트를 성공적으로 완수하며
+        기획 역량과 프로젝트 수행 능력을 입증했습니다. 현재 알파코캠퍼스 AI
+        개발자 과정을 통해 CV, NLP, 웹 개발, 클라우드 등 AI 기술을 집중적으로
+        학습하며, 프로젝트 관리뿐만 아니라 AI 엔지니어링까지 갖춘 전문가로
+        성장하고 있습니다. 프로젝트 전체를 조망하는 통찰력과 문제해결 능력을
+        바탕으로 기업의 AI 솔루션 도입과 디지털 혁신을 주도하는 프로젝트
+        매니저가 되겠습니다.
+      </p>
+      <a href="#" title="남상도의 작업물 페이지로 이동">작업물 보러가기</a>
+      <!-- <h2>상세 스펙</h2>
+      <ul>
+        <li>AI 오픈소스 모델 적용</li>
+        <li>MS-SQL 프로시저 개발</li>
+        <li>Figma 프로토타입 구현</li>
+      </ul>
+      <h2>내 소개</h2> -->
+    </div>
+    <!-- footer -->
+    <div>
+      <ul>
+        <li><a href="#" target="_blank"> youtube </a></li>
+        <li>
+          <a href="https://sd-ux.blogspot.com/" target="_blank">
+            스터디 블로그
+          </a>
+        </li>
+        <li><a href="#" target="_blank"> facebook </a></li>
+      </ul>
+
+      <p>2025!nam sang do &copy; All right reserval.</p>
+    </div>
+  </body>
 </html>
+<!--
+project: 남상도의 취업용 포폴 페이지
+
+purpose: 최대한 나의 유능함을 어필해서 많은 면접 제의 받기
+
+feature
+- 면접관의 첫인상을 사로잡을 후크 포인트
+- 내 소개
+- 내 작업물 소개
+- 나의 작업 히스토리를 어필 (중요한 사람한테만)
+- 로그인 기능
+
+sitemap: 실제 개발해야 되는 페이지 분량 및 구조를 파악해서 일정, 인력배치 산정을 위한 분석
+- home: 인터랙티브한 모션으로 처음 방문한 사용자의 흥미 유발
+- profile: 내 개인 소개및 포폴 및 블로그 확인 가능 링크
+- portfolio list: 내 작업물 목록 소개(카드형) -> 클릭시 상세 페이지 이동
+- portfolio detail: 포폴 상세 페이지
+- blog list: 리스트 형태 -> 클릭시 상세 페이지 이동
+- blog detail: 클릭시 상세 페이지 이동
+- join: 회원 정보 입력 받는 페이지
+- login: 로그인 화면 페이지
+- result: 회원 가입후 안내 메세지 페이지
+
+UX를 고려한 Navigation UI설계 (사이트 메뉴 설계)
+- 메인 인트로 페이지 (Intro): index.html
+- 자기 소개 페이지 (About me): profile.html
+- 포트폴리오 페이지 (My works): works.html / workDetail.html
+- 블로그 페이지 (Diary): blog.html / blogDetail.html
+- 회원가입 페이지 (Join): join.html / result.html
+- 로그인 페이지 (Login): login.html
+
+자기 소개 페이지 콘텐츠 구성
+웹 접근성을 고려하여, 자료의 중요도 순으로 우선 구성한다.
+
+hearder 영역 공통 콘텐츠 <div>
+- 페이지 로고: h1>a      <h1> <a> <img>
+- 페이지 메뉴: ul>li>a   <ul> <li> <a>
+
+소개 페이지 전용 콘텐츠 <div>
+- 이름  <h1> 
+  (h1을 또 쓰는 이유? 모듈 기반으로 h 깊이를 정한다.)
+- 내 이미지  <img>
+- 내 기술 스팩 ol>li  <ul><li>
+- 내 소개글  <p>
+- 포폴 바로가기 링크  <a>
+
+footer 영역 공통 콘텐츠 <div>
+- sns ul>li>a  <ul> <li> <a>
+- 카피라이트   <div>
+-->
