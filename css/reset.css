@@ -5,6 +5,10 @@
   --transition-time: 0.5s;
   --black-color: 0, 0, 0;
   --white-color: 255, 255, 255;
+
+  /* lightness, chroma, hue*/
+  --point-lch1: lch(10% 10 180);
+  --point-lch2: 50% 100 100;
 }
 
 /*
