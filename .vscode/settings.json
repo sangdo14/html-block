@@ -11,5 +11,6 @@
   "prettier.requireConfig": true,
   "liveServer.settings.CustomBrowser": "chrome",
   "workbench.colorTheme": "Monokai",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "liveServer.settings.port": 5501
 }

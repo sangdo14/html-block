@@ -1,0 +1,77 @@
+@use 'variable';
+:root {
+  /* lightness, chroma, hue*/
+  --point-lch1: lch(55.01% 74.77 129.82);
+  --point-lch: 52.6% 71.85 140.01;
+  --black-lch: 0% 0 0;
+  --gray-lch: 50% 0 0;
+  --white-lch: 100% 0 0;
+
+  --opacity-vol: 0.5;
+  --transition-time: 0.5s;
+
+  --wid-tablet: 1200px;
+  --wid-mp: 680px;
+}
+// $wid-tablet: 1200px;
+// $wid-mp: 680px;
+/*
+  미디어쿼리 사용시 break point값을 일반 css 변수에
+  닫아놓으면 문서가 랜더링될때 변수값이 읽히기 때문에
+  반응형 동작이 안됨
+
+  -- 해결방법
+  문서 렌더링전 미리 서버쪽에서 break point수리값 설정되야함
+  scss변수는 변수값이 랜더링전 컴파일 시점에 읽히기 때문에 가능
+*/
+html {
+  font-size: 16px;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  color: inherit;
+  // padding 값을 블록요소 너비, 높이에 흡수 시킴
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR';
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+  미디어쿼리 (media query)
+  - 브라우저 폭을 구문해서 각 폭에 맞는 전용 스타일 적용
+  - 하나의 웹 문서를 브라우저 폭에 다른 기술을 적용 가능하게 함
+  
+  반응형 웹 (RWD: Reponsive Web Design)
+
+  효율적인 RWD 작업을 위한 규칙
+  1. 모바일 디바이스에서는 가로 폭의 총합이 100%작업
+  (가로축에 px불가, 여백포함)
+  2. 기존 데스크탑 대비 변경할 필요가 없는 코드는 미디어쿼리에 붙여넣기 할 필요 없음
+  3. 높이 값은 가급적 고정 px
+*/
+
+// 브라우저 최대폭이 1200px까지 일때
+// 0~100px
+@media screen and (max-width: variable.$wid_tablet) {
+  body {
+    background-color: hotpink;
+  }
+}
+
+@media screen and (max-width: variable.$wid_map) {
+  body {
+    background-color: aqua;
+  }
+}

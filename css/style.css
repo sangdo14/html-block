@@ -1,59 +1,206 @@
-@import 'reset.css';
+@charset "UTF-8";
+/*
+scss 변수 사용법
+- _variable.scss 변수등록 전용 파일 생성
+- 해당 파일 안쪽에 $변수명: 값; 으로 변수 선언
+- 해당 변수 호출하려고 하는 파일에 @use '파일명'
+- 파일명.변수명
+*/
+:root {
+  /* lightness, chroma, hue*/
+  --point-lch1: lch(55.01% 74.77 129.82);
+  --point-lch: 52.6% 71.85 140.01;
+  --black-lch: 0% 0 0;
+  --gray-lch: 50% 0 0;
+  --white-lch: 100% 0 0;
+  --opacity-vol: 0.5;
+  --transition-time: 0.5s;
+  --wid-tablet: 1200px;
+  --wid-mp: 680px;
+}
+
+/*
+  미디어쿼리 사용시 break point값을 일반 css 변수에
+  닫아놓으면 문서가 랜더링될때 변수값이 읽히기 때문에
+  반응형 동작이 안됨
+
+  -- 해결방법
+  문서 렌더링전 미리 서버쪽에서 break point수리값 설정되야함
+  scss변수는 변수값이 랜더링전 컴파일 시점에 읽히기 때문에 가능
+*/
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: inherit;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR";
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+  미디어쿼리 (media query)
+  - 브라우저 폭을 구문해서 각 폭에 맞는 전용 스타일 적용
+  - 하나의 웹 문서를 브라우저 폭에 다른 기술을 적용 가능하게 함
+
+  반응형 웹 (RWD: Reponsive Web Design)
+
+  효율적인 RWD 작업을 위한 규칙
+  1. 모바일 디바이스에서는 가로 폭의 총합이 100%작업
+  (가로축에 px불가, 여백포함)
+  2. 기존 데스크탑 대비 변경할 필요가 없는 코드는 미디어쿼리에 붙여넣기 할 필요 없음
+  3. 높이 값은 가급적 고정 px
+*/
+@media screen and (max-width: 1200px) {
+  body {
+    background-color: hotpink;
+  }
+}
+@media screen and (max-width: 680px) {
+  body {
+    background-color: aqua;
+  }
+}
 body {
+  background-color: lch(var(--gray-lch));
   padding: 20px;
 }
-body div {
+
+div {
   border-radius: 20px;
-  background-color: rgba(var(--white-color));
-  width: 450px;
+  background-color: lch(var(--white-lch));
+  width: 980px;
   margin: 0 auto;
-  padding: 60px 50px;
+  padding: 40px 50px;
 }
-
-header,
-main,
-footer {
+div header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lch(var(--black-lch));
 }
-
-/* header */
-header {
-  margin-bottom: 60px;
-  text-align: center;
+div header h1 {
+  font: 600 2.5rem/1 "orbitron";
+  color: lch(var(--point-lch)/0.8);
 }
-header h1 {
-  font: 600 3rem/1 'orbitron';
-  margin-bottom: 25px;
-  color: rgba(var(--point-color-a), 0.8);
+div header nav {
+  display: flex;
+  gap: 40px;
 }
-header nav a {
-  font: 0.9rem/1 'orbitron';
+div header nav a {
+  font: 0.9rem/1 "orbitron";
   letter-spacing: 1px;
-  margin: 0px 10px;
   display: inline-block;
 }
-header nav a:hover {
+div header nav a:hover {
   font-weight: bold;
   font-size: 1.2rem;
   transition: 200ms;
-  color: rgba(var(--point-color-a), 0.5);
+  color: lch(var(--point-lch)/0.5);
+}
+div header .btnMobileMenu {
+  display: none;
+}
+div footer {
+  border-top: 1px solid lch(var(--black-lch));
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+div footer ul {
+  display: flex;
+  gap: 10px;
+  font-size: 1.2rem;
+  order: 2;
+}
+div footer ul li {
+  color: lch(var(--point-lch));
+}
+div footer ul li:hover {
+  transform: rotate(360deg) scale(0.8);
+  transition: var(--transition-time);
+  opacity: var(--opacity-vol);
+}
+div footer p {
+  font-size: 0.8rem;
+  color: lch(var(--point-lch)/0.5);
+  order: 1;
 }
 
-/* main */
-main {
-  margin-bottom: 50px;
-  text-align: center;
+@media screen and (max-width: 1200px) {
+  div {
+    width: 90%;
+  }
+  div header {
+    justify-content: space-between;
+  }
+  div header h1 {
+    font-size: 1.4rem;
+  }
+  div header nav {
+    display: none;
+  }
+  div header .btnMobileMenu {
+    display: block;
+  }
 }
-main h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+@media screen and (max-width: 680px) {
+  body {
+    padding: 0px;
+  }
+  div {
+    width: 100%;
+    border-radius: 0px;
+  }
+  div header h1 {
+    font-size: 1.2rem;
+  }
+  div footer {
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  div footer ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  div footer p {
+    width: 100%;
+    text-align: center;
+  }
+}
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0px;
 }
 main figure {
-  width: 300px;
-  height: 300px;
-  margin: 0px auto 30px;
-  border-radius: 50%;
+  width: 40%;
+  height: 400px;
+  border-radius: 3%;
   overflow: hidden;
-  background-color: rgba(var(--point-color-a), 0.4);
+  background-color: lch(var(--point-lch)/0.4);
 }
 main figure img {
   width: 100%;
@@ -65,15 +212,19 @@ main figure img:hover {
   transform: scale(1.5);
   opacity: var(--opacity-vol);
 }
-main p {
-  line-height: 1.5;
-  margin: 0px auto 20px;
-  text-align: justify; /*left right center, justify는 띄어쓰기의 간격을 조절한다.*/
-  color: var(--point-lch1);
+main article {
+  width: 55%;
+  text-align: left;
 }
-main a {
-  background-color: rgba(var(--black-color));
-  color: rgba(var(--white-color));
+main article p {
+  line-height: 1.5;
+  text-align: justify; /*left right center, justify는 띄어쓰기의 간격을 조절한다.*/
+  color: lch(var(--gray-lch));
+  margin-bottom: 20px;
+}
+main article a {
+  background-color: lch(var(--black-lch));
+  color: lch(var(--white-lch));
   font-weight: bold;
   font-size: 0.7rem;
   width: 100px;
@@ -83,101 +234,23 @@ main a {
   line-height: 34px;
   border-radius: 15px;
 }
-main a:hover {
-  width: 150px;
-  background-color: rgba(var(--point-color-a), 0.8);
+main article a:hover {
+  width: 130px;
+  background-color: lch(var(--point-lch)/0.8);
   transition: var(--transition-time);
 }
 
-/* footer */
-footer {
-  border-top: 1px solid black;
-  padding-top: 20px;
-  text-align: right;
-}
-footer ul {
-  font-size: 1.2rem;
-}
-footer li {
-  display: inline;
-}
-footer ul li {
-  color: rgba(var(--point-color-a), 1);
-  display: inline-block;
-}
-footer ul li:hover {
-  transform: rotate(360deg) scale(0.8);
-  transition: var(--transition-time);
-  opacity: var(--opacity-vol);
-}
-footer p {
-  font-size: 0.8rem;
-  color: lch(var(--point-lch2) / 0.5);
+@media screen and (max-width: 1200px) {
+  main {
+    flex-wrap: wrap;
+  }
+  main figure {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  main article {
+    width: 100%;
+  }
 }
 
-/*
-  LCH
-*/
-
-/*
-  요소명: hover (가상선택자)
-  - 요소에 마우스를 올렸을 때 변경되는 구분을 설정
-
-  투명도 설정
-  opercity: 0.5; (반투명 처리 0~1)
-
-  전환효과 설정
-  - transition: 0.5s (0.5초 동안 변경 구문에 대한 전환모션 적용)
-  - 주의점: hover문이 아닌 원본 요소에 적용
-
-  요소 변형 효과
-  - transform: translateX(10px); 10px만큼 가로로 이동, -면 반대방향
-  - transform: translateY(10px); 10px만큼 세로로 이동
-  - transform: rotate(45deg); 45도만큼 회전
-  - transform: scale(1.5); 1.5배 만큼 확대
-  - transform: skewX(35deg); 35도만큼 비틀기
-
-  주의: 요소변형은 block이나 inline-block요소에만 적용됨.
-*/
-
-/*
-  ram 단위의 개념
-  - 웹에서 텍스트 크기 지정할 때 주로 쓰이는 단위
-  - 1rem = 16px
-*/
-/*
-  정렬 기능 (text-align)
-  - '블록 요소'에 정렬기능 지정 (인라인 요소 아님)
-  - 블록요소 안쪽에 있는 인라인 요소들이 정렬됨
-  - left, center, right, justify
-  - justify는 단어 사이에 간격을 조절해서 양쪽을 맞추는 방식
-*/
-
-/*
-  서식 관련 구문
-  font-weight: normal / bold;
-  font-style: normal / italic;
-  font-size: 14px / 1rem / 1vw / 1vh;
-  line-height: 1.5;
-  font-family: 'arial', '돋움';
-  color: pink;
-
-  시스템 폰트: 특정 os에 기본적으로 내장된 폰트 (재배포 라이센스 이슈가 있을 수 있다.)
-  한글: '돋움', '굴림'
-  영어: 'arial', 'san-serif', 'verdana'
-
-  대체폰트: font-family 속성에 여러개의 폰트를 적용.
-*/
-
-/*
-랜더링 동작 방식
-- html태그를 해석해서 DOM생성 (Documnet Object Model)
-- css를 해석해서 CSS Dom 생성
-- 위의 객체가 생성되기 전까지는 화면랜더링 블록됨
-
-구글 웹폰트를 <link> 방식으로 연결하는 게 좋은 이유
-- DOM생성시 서버에서 폰트를 사전에 미리 다운로드
-- 많은 웹폰트 연결로 인해 화면 렌더링 지연을 최소화 가능
-- layout shifting 방지 가능 (컨텐츠의 재구성으로 높이값이 어긋나 덜컹거리는 현상)
-- link방식은 한번 다운로드 받은 폰트의 캐싱처리로 인해 layout shifting 최소화
-*/
+/*# sourceMappingURL=style.css.map */

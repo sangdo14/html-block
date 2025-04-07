@@ -1,14 +1,14 @@
 :root {
   /* --point-color: rgba(255, 105, 180, 0.8); */
-  --point-color-a: 0, 128, 0;
   --opacity-vol: 0.5;
   --transition-time: 0.5s;
-  --black-color: 0, 0, 0;
-  --white-color: 255, 255, 255;
 
   /* lightness, chroma, hue*/
-  --point-lch1: lch(10% 10 180);
-  --point-lch2: 50% 100 100;
+  --point-lch1: lch(55.01% 74.77 129.82);
+  --point-lch: 52.6% 71.85 140.01;
+  --black-lch: 0% 0 0;
+  --gray-lch: 50% 0 0;
+  --white-lch: 100% 0 0;
 }
 
 /*
@@ -21,7 +21,7 @@
 
 html {
   font-size: 16px;
-  background-color: rgba(var(--black-color), 0.5);
+  background-color: lch(var(--gray-lch));
 }
 * {
   margin: 0px;
@@ -47,13 +47,3 @@ img {
   margin: 0px auto; 블록요소 자체를 가운데 배치
   text-align: center; 블록요소 안쪽의 인라인요소를 가운데 배치
 */
-article {
-  width: 200px;
-  height: 200px;
-  background-color: rgba(var(--point-color-a), 0.4);
-  margin: 50px auto;
-  text-align: center;
-}
-article span {
-  font-size: 2rem;
-}

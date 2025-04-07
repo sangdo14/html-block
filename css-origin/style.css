@@ -1,0 +1,190 @@
+@import 'reset.css';
+body {
+  padding: 20px;
+}
+body div {
+  border-radius: 20px;
+  background-color: lch(var(--white-lch));
+  width: 980px;
+  margin: 0 auto;
+  padding: 60px 50px;
+}
+
+header,
+main,
+footer {
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lch(var(--black-lch));
+}
+header h1 {
+  font: 600 2.5rem/1 'orbitron';
+  color: lch(var(--point-lch) / 0.8);
+}
+header nav {
+  display: flex;
+  gap: 40px;
+}
+header nav a {
+  font: 0.9rem/1 'orbitron';
+  letter-spacing: 1px;
+  display: inline-block;
+}
+header nav a:hover {
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: 200ms;
+  color: lch(var(--point-lch) / 0.5);
+}
+
+/* main */
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0px;
+}
+main figure {
+  width: 40%;
+  height: 400px;
+  border-radius: 3%;
+  overflow: hidden;
+  background-color: lch(var(--point-lch) / 0.4);
+}
+main figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s;
+}
+main figure img:hover {
+  transform: scale(1.5);
+  opacity: var(--opacity-vol);
+}
+main article {
+  width: 55%;
+  text-align: left;
+}
+main article p {
+  line-height: 1.5;
+  text-align: justify; /*left right center, justify는 띄어쓰기의 간격을 조절한다.*/
+  color: lch(var(--gray-lch));
+  margin-bottom: 20px;
+}
+main article a {
+  background-color: lch(var(--black-lch));
+  color: lch(var(--white-lch));
+  font-weight: bold;
+  font-size: 0.7rem;
+  width: 100px;
+  height: 34px;
+  display: inline-block;
+  text-align: center;
+  line-height: 34px;
+  border-radius: 15px;
+}
+main article a:hover {
+  width: 130px;
+  background-color: lch(var(--point-lch) / 0.8);
+  transition: var(--transition-time);
+}
+
+/* footer */
+footer {
+  border-top: 1px solid lch(var(--black-lch));
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer ul {
+  display: flex;
+  gap: 10px;
+  font-size: 1.2rem;
+  order: 2;
+}
+footer ul li {
+  color: lch(var(--point-lch));
+}
+footer ul li:hover {
+  transform: rotate(360deg) scale(0.8);
+  transition: var(--transition-time);
+  opacity: var(--opacity-vol);
+}
+footer p {
+  font-size: 0.8rem;
+  color: lch(var(--point-lch) / 0.5);
+  order: 1;
+}
+
+/*
+  LCH
+*/
+
+/*
+  요소명: hover (가상선택자)
+  - 요소에 마우스를 올렸을 때 변경되는 구분을 설정
+
+  투명도 설정
+  opercity: 0.5; (반투명 처리 0~1)
+
+  전환효과 설정
+  - transition: 0.5s (0.5초 동안 변경 구문에 대한 전환모션 적용)
+  - 주의점: hover문이 아닌 원본 요소에 적용
+
+  요소 변형 효과
+  - transform: translateX(10px); 10px만큼 가로로 이동, -면 반대방향
+  - transform: translateY(10px); 10px만큼 세로로 이동
+  - transform: rotate(45deg); 45도만큼 회전
+  - transform: scale(1.5); 1.5배 만큼 확대
+  - transform: skewX(35deg); 35도만큼 비틀기
+
+  주의: 요소변형은 block이나 inline-block요소에만 적용됨.
+*/
+
+/*
+  ram 단위의 개념
+  - 웹에서 텍스트 크기 지정할 때 주로 쓰이는 단위
+  - 1rem = 16px
+*/
+/*
+  정렬 기능 (text-align)
+  - '블록 요소'에 정렬기능 지정 (인라인 요소 아님)
+  - 블록요소 안쪽에 있는 인라인 요소들이 정렬됨
+  - left, center, right, justify
+  - justify는 단어 사이에 간격을 조절해서 양쪽을 맞추는 방식
+*/
+
+/*
+  서식 관련 구문
+  font-weight: normal / bold;
+  font-style: normal / italic;
+  font-size: 14px / 1rem / 1vw / 1vh;
+  line-height: 1.5;
+  font-family: 'arial', '돋움';
+  color: pink;
+
+  시스템 폰트: 특정 os에 기본적으로 내장된 폰트 (재배포 라이센스 이슈가 있을 수 있다.)
+  한글: '돋움', '굴림'
+  영어: 'arial', 'san-serif', 'verdana'
+
+  대체폰트: font-family 속성에 여러개의 폰트를 적용.
+*/
+
+/*
+랜더링 동작 방식
+- html태그를 해석해서 DOM생성 (Documnet Object Model)
+- css를 해석해서 CSS Dom 생성
+- 위의 객체가 생성되기 전까지는 화면랜더링 블록됨
+
+구글 웹폰트를 <link> 방식으로 연결하는 게 좋은 이유
+- DOM생성시 서버에서 폰트를 사전에 미리 다운로드
+- 많은 웹폰트 연결로 인해 화면 렌더링 지연을 최소화 가능
+- layout shifting 방지 가능 (컨텐츠의 재구성으로 높이값이 어긋나 덜컹거리는 현상)
+- link방식은 한번 다운로드 받은 폰트의 캐싱처리로 인해 layout shifting 최소화
+*/

@@ -1,0 +1,136 @@
+@use 'variable';
+body {
+  background-color: lch(var(--gray-lch));
+  padding: 20px;
+}
+div {
+  border-radius: 20px;
+  background-color: lch(var(--white-lch));
+  width: 980px;
+  margin: 0 auto;
+  padding: 40px 50px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    border-bottom: 1px solid lch(var(--black-lch));
+
+    h1 {
+      font: 600 2.5rem/1 'orbitron';
+      color: lch(var(--point-lch) / 0.8);
+    }
+
+    nav {
+      display: flex;
+      gap: 40px;
+
+      a {
+        font: 0.9rem/1 'orbitron';
+        letter-spacing: 1px;
+        display: inline-block;
+
+        &:hover {
+          font-weight: bold;
+          font-size: 1.2rem;
+          transition: 200ms;
+          color: lch(var(--point-lch) / 0.5);
+        }
+      }
+    }
+
+    .btnMobileMenu {
+      display: none;
+    }
+  }
+
+  footer {
+    border-top: 1px solid lch(var(--black-lch));
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
+    ul {
+      display: flex;
+      gap: 10px;
+      font-size: 1.2rem;
+      order: 2;
+
+      li {
+        color: lch(var(--point-lch));
+
+        &:hover {
+          transform: rotate(360deg) scale(0.8);
+          transition: var(--transition-time);
+          opacity: var(--opacity-vol);
+        }
+      }
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: lch(var(--point-lch) / 0.5);
+      order: 1;
+    }
+  }
+}
+
+// tablet
+@media screen and (max-width: variable.$wid_tablet) {
+  div {
+    width: 90%;
+
+    header {
+      justify-content: space-between;
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .btnMobileMenu {
+        display: block;
+      }
+    }
+  }
+}
+
+// M.P
+@media screen and (max-width: variable.$wid_map) {
+  body {
+    padding: 0px;
+  }
+  div {
+    width: 100%;
+    border-radius: 0px;
+
+    header {
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
+
+    footer {
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: center;
+
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      p {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
