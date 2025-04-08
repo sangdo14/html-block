@@ -22,7 +22,8 @@ scss 변수 사용법
 /*
   미디어쿼리 사용시 break point값을 일반 css 변수에
   닫아놓으면 문서가 랜더링될때 변수값이 읽히기 때문에
-  반응형 동작이 안됨
+  반응형 동작이 안됨.
+  반응형이 동작할 때, 변수를 읽기 때문.
 
   -- 해결방법
   문서 렌더링전 미리 서버쪽에서 break point수리값 설정되야함
@@ -153,6 +154,7 @@ div footer p {
   }
   div header {
     justify-content: space-between;
+    /* block: 안보이는 걸 보이게 하는 역할. display:none을 해제한다. */
   }
   div header h1 {
     font-size: 1.4rem;
@@ -246,10 +248,16 @@ main article a:hover {
   }
   main figure {
     width: 100%;
+    height: 50vw;
     margin-bottom: 15px;
   }
   main article {
     width: 100%;
+  }
+}
+@media screen and (max-width: 680px) {
+  main figure {
+    height: 70vw;
   }
 }
 

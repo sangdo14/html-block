@@ -13,12 +13,11 @@
   --wid-tablet: 1200px;
   --wid-mp: 680px;
 }
-// $wid-tablet: 1200px;
-// $wid-mp: 680px;
 /*
   미디어쿼리 사용시 break point값을 일반 css 변수에
   닫아놓으면 문서가 랜더링될때 변수값이 읽히기 때문에
-  반응형 동작이 안됨
+  반응형 동작이 안됨.
+  반응형이 동작할 때, 변수를 읽기 때문.
 
   -- 해결방법
   문서 렌더링전 미리 서버쪽에서 break point수리값 설정되야함
@@ -61,9 +60,6 @@ img {
   2. 기존 데스크탑 대비 변경할 필요가 없는 코드는 미디어쿼리에 붙여넣기 할 필요 없음
   3. 높이 값은 가급적 고정 px
 */
-
-// 브라우저 최대폭이 1200px까지 일때
-// 0~100px
 @media screen and (max-width: variable.$wid_tablet) {
   body {
     background-color: hotpink;
