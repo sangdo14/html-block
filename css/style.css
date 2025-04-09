@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   --point-lch: lch(65% 65 350);
   --point-lch-code: 65% 65 350;
@@ -33,8 +32,30 @@ img {
   object-fit: cover;
 }
 
+fieldset {
+  border: none;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] select,
+textarea {
+  width: 100% !important;
+  padding: 5px 10px;
+  background: lch(var(--point-lch-code)/0.1);
+  border: 1px solid lch(0% 0 0deg / 0.5);
+  border-radius: 3px;
+  resize: none;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin-left: 5px;
+  margin-right: 30px;
+}
+
 body {
-  padding: 30px;
+  padding: 10px;
   background-color: gray;
 }
 
@@ -202,39 +223,39 @@ body {
     text-align: center;
   }
 }
-main {
+.profile {
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
 }
-main figure {
+.profile figure {
   width: 35%;
   height: 400px;
   margin-bottom: 30px;
   overflow: hidden;
   background-color: var(--point-lch);
 }
-main figure img {
+.profile figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: 1s;
 }
-main figure img:hover {
+.profile figure img:hover {
   transform: scale(1.5);
   opacity: 0.5;
 }
-main article {
+.profile article {
   width: 55%;
   text-align: left;
 }
-main article p {
+.profile article p {
   line-height: 1.5;
   margin-bottom: 30px;
   text-align: justify;
   opacity: 0.5;
 }
-main article a {
+.profile article a {
   background-color: black;
   font-weight: bold;
   font-size: 0.7rem;
@@ -247,36 +268,67 @@ main article a {
   border-radius: 15px;
   transition: 0.5s;
 }
-main article a:hover {
+.profile article a:hover {
   width: 150px;
   background-color: var(--point-lch);
 }
 
 @media screen and (max-width: 1200px) {
-  main {
+  .profile {
     flex-wrap: wrap;
   }
-  main figure {
+  .profile figure {
     width: 100%;
     height: 50vw;
   }
-  main article {
+  .profile article {
     width: 100%;
   }
 }
 @media screen and (max-width: 680px) {
-  main figure {
+  .profile figure {
     height: 70vw;
   }
 }
-/*
-이름 (최소, 2글자 이상)
-비밀 번호, 재확인 (최소 6글자 이상, 문자, 숫자, 특수문자 모두 포함)
-메일주소 (@,. 포함 / @,. 앞뒤로 무조건 문자값 있어야됨)
-성별 (남성, 여성 중 하나만 선택)
-좋아하는 색상 (복수개 선택 가능)
-학력 (복수개중 하나만 선택: 드롭다운 메뉴 형식)
-건의내용 (장문의 텍스트 형식)
-*/
+.join {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.join h1 {
+  width: 30%;
+  text-align: right;
+}
+.join article {
+  width: 65%;
+  text-align: left;
+  margin-bottom: 50px;
+}
+.join article h2 {
+  font-size: 1.2rem;
+}
+.join article p {
+  margin-bottom: 20px;
+}
+.join article p input[type=text],
+.join article p input[type=password],
+.join article p select {
+  width: 60% !important;
+}
+.join article textarea {
+  width: 60% !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .join {
+    flex-wrap: wrap;
+  }
+  .join h1 {
+    width: 100%;
+  }
+  .join article {
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

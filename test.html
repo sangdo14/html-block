@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ];
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday'];
+      const now = new Date();
+
+      console.log(now);
+
+      //년도
+      console.log(now.getFullYear());
+
+      //월 (0부터 시작함)
+      console.log(months[now.getMonth()]);
+
+      //일
+      console.log(now.getDate());
+
+      //요일 (0부터 시작함, 0=일요일)
+      console.log(now.getDay());
+    </script>
+  </body>
+</html>

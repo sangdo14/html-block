@@ -1,5 +1,5 @@
 @use 'variable';
-main {
+.profile {
   margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
@@ -58,7 +58,7 @@ main {
 
 // tablet
 @media screen and (max-width: variable.$wid_tablet) {
-  main {
+  .profile {
     flex-wrap: wrap;
 
     figure {
@@ -74,7 +74,7 @@ main {
 
 // m.p
 @media screen and (max-width: variable.$wid_mp) {
-  main {
+  .profile {
     figure {
       height: 70vw;
     }
