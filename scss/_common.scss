@@ -1,25 +1,30 @@
 @use 'variable';
+
 body {
-  background-color: lch(var(--gray-lch));
-  padding: 20px;
+  padding: 100px;
+  background-color: gray;
 }
-div {
-  border-radius: 20px;
-  background-color: lch(var(--white-lch));
-  width: 980px;
-  margin: 0 auto;
-  padding: 40px 50px;
+.wrap {
+  width: 1200px;
+  background-color: white;
+  padding: 50px;
+  margin: 0px auto;
+  border-radius: 10px;
+  text-align: center;
 
   header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    margin-bottom: 50px;
     padding-bottom: 20px;
-    border-bottom: 1px solid lch(var(--black-lch));
+    border-bottom: 1px solid black;
 
     h1 {
-      font: 600 2.5rem/1 'orbitron';
-      color: lch(var(--point-lch) / 0.8);
+      font-family: 'orbitron';
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--point-lch);
     }
 
     nav {
@@ -27,61 +32,118 @@ div {
       gap: 40px;
 
       a {
-        font: 0.9rem/1 'orbitron';
+        font: 500 0.8rem/1 'orbitron';
         letter-spacing: 1px;
-        display: inline-block;
+        transition: 0.5s;
 
         &:hover {
-          font-weight: bold;
-          font-size: 1.2rem;
-          transition: 200ms;
-          color: lch(var(--point-lch) / 0.5);
+          color: var(--point-lch);
+          transform: scale(1.3);
         }
       }
     }
 
-    .btnMobileMenu {
+    .btnToggle {
+      width: 28px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
       display: none;
+
+      p {
+        width: 100%;
+        height: 2px;
+        background: black;
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        transition: 0.5s;
+
+        &:nth-of-type(1) {
+          transform: translateY(-10px) rotate(0deg);
+          transition-delay: 0.1s;
+        }
+        &:nth-of-type(2) {
+          transform: translateY(0px) translateX(0px);
+          opacity: 1;
+        }
+        &:nth-of-type(3) {
+          transform: translateY(10px) rotate(0deg);
+          transition-delay: 0.2s;
+        }
+      }
+
+      //btnToggle에 on클래스가 붙었을때
+      &.on {
+        p {
+          background: var(--point-lch);
+
+          &:nth-of-type(1) {
+            transform: translateY(0px) rotate(225deg);
+          }
+          &:nth-of-type(2) {
+            transform: translateY(0px) translateX(-30px);
+            opacity: 0;
+          }
+          &:nth-of-type(3) {
+            transform: translateY(0px) rotate(-225deg);
+          }
+        }
+      }
     }
   }
 
   footer {
-    border-top: 1px solid lch(var(--black-lch));
-    padding-top: 20px;
+    border-top: 1px solid black;
+    padding: 20px 0px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 5px;
+    align-items: center;
 
     ul {
+      font-size: 1.2rem;
       display: flex;
       gap: 10px;
-      font-size: 1.2rem;
       order: 2;
 
       li {
-        color: lch(var(--point-lch));
+        color: var(--point-lch);
+        transition: 0.5s;
 
         &:hover {
-          transform: rotate(360deg) scale(0.8);
-          transition: var(--transition-time);
-          opacity: var(--opacity-vol);
+          transform: rotate(360deg) scale(0);
+          opacity: 0;
         }
       }
     }
 
     p {
       font-size: 0.8rem;
-      color: lch(var(--point-lch) / 0.5);
       order: 1;
     }
   }
 }
 
+.mobileMenu {
+  width: 300px;
+  height: 100vh;
+  background: lch(var(--point-lch-code) / 0.8);
+  position: absolute;
+  top: 0px;
+  left: -350px;
+  backdrop-filter: blur(10px);
+  box-shadow: 10px 0px 20px lch(0% 0 0 / 0.2);
+  transition: 0.5s;
+
+  &.on {
+    left: 0px;
+  }
+}
+
 // tablet
 @media screen and (max-width: variable.$wid_tablet) {
-  div {
-    width: 90%;
+  .wrap {
+    width: 100%;
 
     header {
       justify-content: space-between;
@@ -94,20 +156,19 @@ div {
         display: none;
       }
 
-      /* block: 안보이는 걸 보이게 하는 역할. display:none을 해제한다. */
-      .btnMobileMenu {
+      .btnToggle {
         display: block;
       }
     }
   }
 }
 
-// M.P
-@media screen and (max-width: variable.$wid_map) {
+//M.P
+@media screen and (max-width: variable.$wid_mp) {
   body {
     padding: 0px;
   }
-  div {
+  .wrap {
     width: 100%;
     border-radius: 0px;
 
@@ -126,6 +187,7 @@ div {
         width: 100%;
         display: flex;
         justify-content: center;
+        gap: 30px;
       }
 
       p {
