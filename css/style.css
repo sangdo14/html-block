@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --point-lch: lch(65% 65 350);
   --point-lch-code: 65% 65 350;
@@ -22,6 +23,8 @@ ol {
 
 a {
   text-decoration: none;
+  font-family: inherit;
+  color: inherit;
 }
 
 img {
@@ -31,7 +34,7 @@ img {
 }
 
 body {
-  padding: 100px;
+  padding: 30px;
   background-color: gray;
 }
 
@@ -55,6 +58,9 @@ body {
   font-family: "orbitron";
   font-size: 1.8rem;
   text-align: center;
+  color: black;
+}
+.wrap header h1 a:hover {
   color: var(--point-lch);
 }
 .wrap header nav {
@@ -125,12 +131,12 @@ body {
   order: 2;
 }
 .wrap footer ul li {
-  color: var(--point-lch);
+  color: black;
   transition: 0.5s;
 }
 .wrap footer ul li:hover {
-  transform: rotate(360deg) scale(0);
-  opacity: 0;
+  transform: scale(1.1);
+  color: var(--point-lch);
 }
 .wrap footer p {
   font-size: 0.8rem;
@@ -263,5 +269,14 @@ main article a:hover {
     height: 70vw;
   }
 }
+/*
+이름 (최소, 2글자 이상)
+비밀 번호, 재확인 (최소 6글자 이상, 문자, 숫자, 특수문자 모두 포함)
+메일주소 (@,. 포함 / @,. 앞뒤로 무조건 문자값 있어야됨)
+성별 (남성, 여성 중 하나만 선택)
+좋아하는 색상 (복수개 선택 가능)
+학력 (복수개중 하나만 선택: 드롭다운 메뉴 형식)
+건의내용 (장문의 텍스트 형식)
+*/
 
 /*# sourceMappingURL=style.css.map */

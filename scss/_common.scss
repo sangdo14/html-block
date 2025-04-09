@@ -1,7 +1,7 @@
 @use 'variable';
 
 body {
-  padding: 100px;
+  padding: 30px;
   background-color: gray;
 }
 .wrap {
@@ -24,7 +24,13 @@ body {
       font-family: 'orbitron';
       font-size: 1.8rem;
       text-align: center;
-      color: var(--point-lch);
+      color: black;
+
+      a {
+        &:hover {
+          color: var(--point-lch);
+        }
+      }
     }
 
     nav {
@@ -107,12 +113,12 @@ body {
       order: 2;
 
       li {
-        color: var(--point-lch);
+        color: black;
         transition: 0.5s;
 
         &:hover {
-          transform: rotate(360deg) scale(0);
-          opacity: 0;
+          transform: scale(1.1);
+          color: var(--point-lch);
         }
       }
     }
