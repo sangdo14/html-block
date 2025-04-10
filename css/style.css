@@ -328,6 +328,11 @@ body {
 .join article p select {
   width: 60% !important;
 }
+.join article p span {
+  font-size: 0.7rem;
+  color: hotpink;
+  display: none;
+}
 .join article textarea {
   width: 60% !important;
 }

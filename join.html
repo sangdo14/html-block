@@ -50,6 +50,7 @@
               </h2>
               <p>
                 <input type="text" name="username" id="username" />
+                <span class="errName">이름을 최소 2글자 이상 입력하세요.</span>
               </p>
 
               <h2>
@@ -57,6 +58,9 @@
               </h2>
               <p>
                 <input type="password" name="pw1" id="pw1" />
+                <span class="errPwd1"
+                  >비밀번호는 특수문자, 문자, 숫자 모두 포함해야 합니다.</span
+                >
               </p>
 
               <h2>
@@ -64,6 +68,7 @@
               </h2>
               <p>
                 <input type="password" name="pw2" id="pw2" />
+                <span class="errPwd2">비밀번호가 서로 다릅니다.</span>
               </p>
 
               <h2>
@@ -71,6 +76,7 @@
               </h2>
               <p>
                 <input type="text" name="email" id="email" />
+                <span class="erremail">이메일 주소를 올바르게 입력하세요.</span>
               </p>
 
               <h2>성별</h2>
@@ -79,6 +85,7 @@
                 <input type="radio" id="male" name="gender" value="male" />
                 <label for="female">여성</label>
                 <input type="radio" id="female" name="gender" value="'female" />
+                <span class="errgender">성별을 입력하세요.</span>
               </p>
 
               <h2>좋아하는 색상</h2>
@@ -94,6 +101,9 @@
                 />
                 <label for="blue">blue</label>
                 <input type="checkbox" id="blue" name="myColor" value="blue" />
+                <span class="errmyColor"
+                  >좋아하는 색상을 하나 이상 선택하세요.</span
+                >
               </p>
 
               <h2><label for="edu">최종 학력</label></h2>
@@ -105,10 +115,14 @@
                   <option value="high-school">고등학교 졸업</option>
                   <option value="college">대학교 졸업</option>
                 </select>
+                <span class="erredu">최종 학력을 입력하세요.</span>
               </p>
 
               <h2><label for="comments">남기는 말</label></h2>
-              <textarea name="comments" id="comments"></textarea>
+              <p>
+                <textarea name="comments" id="comments"></textarea>
+                <span class="errcomments">남기는 말을 입력하세요.</span>
+              </p>
 
               <div>
                 <input type="reset" value="작성 취소" class="btn" />
