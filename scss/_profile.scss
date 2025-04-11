@@ -60,36 +60,48 @@
     width: 100%;
     display: flex;
     gap: 10px;
-    margin: 10px;
+    margin-bottom: 20px;
+
+    li.on {
+      background: black;
+      box-shadow: 10px 10px 20px lch(0% 0 0 / 0.3);
+    }
   }
 
   .mapFrame {
     width: 100%;
+    height: 40vh;
+    position: relative;
 
     #map {
       width: 100%;
-      height: 60vh;
+      height: 100%;
       background: black;
-      filter: saturate(0) invert(0) contrast(0.4);
-      display: none;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      filter: saturate(0) invert(0) contrast(1);
+      z-index: 1;
 
       &.on {
-        display: block;
+        z-index: 2;
       }
 
       &:hover {
         filter: saturate(1);
       }
     }
-
     #view {
       width: 100%;
-      height: 60vh;
+      height: 100%;
       background: black;
-      display: none;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 1;
 
       &.on {
-        display: block;
+        z-index: 2;
       }
     }
   }
@@ -97,7 +109,7 @@
 
 // tablet
 @media screen and (max-width: variable.$wid_tablet) {
-  .profile {
+  main {
     flex-wrap: wrap;
 
     figure {
@@ -113,7 +125,7 @@
 
 // m.p
 @media screen and (max-width: variable.$wid_mp) {
-  .profile {
+  main {
     figure {
       height: 70vw;
     }

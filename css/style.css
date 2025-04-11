@@ -290,48 +290,60 @@ body {
   width: 100%;
   display: flex;
   gap: 10px;
-  margin: 10px;
+  margin-bottom: 20px;
+}
+.profile .btns li.on {
+  background: black;
+  box-shadow: 10px 10px 20px lch(0% 0 0deg / 0.3);
 }
 .profile .mapFrame {
   width: 100%;
+  height: 40vh;
+  position: relative;
 }
 .profile .mapFrame #map {
   width: 100%;
-  height: 60vh;
+  height: 100%;
   background: black;
-  filter: saturate(0) invert(0) contrast(0.4);
-  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  filter: saturate(0) invert(0) contrast(1);
+  z-index: 1;
 }
 .profile .mapFrame #map.on {
-  display: block;
+  z-index: 2;
 }
 .profile .mapFrame #map:hover {
   filter: saturate(1);
 }
 .profile .mapFrame #view {
   width: 100%;
-  height: 60vh;
+  height: 100%;
   background: black;
-  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
 }
 .profile .mapFrame #view.on {
-  display: block;
+  z-index: 2;
 }
 
 @media screen and (max-width: 1200px) {
-  .profile {
+  main {
     flex-wrap: wrap;
   }
-  .profile figure {
+  main figure {
     width: 100%;
     height: 50vw;
   }
-  .profile article {
+  main article {
     width: 100%;
   }
 }
 @media screen and (max-width: 680px) {
-  .profile figure {
+  main figure {
     height: 70vw;
   }
 }
