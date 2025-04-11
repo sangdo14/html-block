@@ -286,15 +286,36 @@ body {
   width: 150px;
   background-color: var(--point-lch);
 }
-
-#map {
+.profile .btns {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+}
+.profile .mapFrame {
+  width: 100%;
+}
+.profile .mapFrame #map {
   width: 100%;
   height: 60vh;
   background: black;
   filter: saturate(0) invert(0) contrast(0.4);
+  display: none;
 }
-#map:hover {
+.profile .mapFrame #map.on {
+  display: block;
+}
+.profile .mapFrame #map:hover {
   filter: saturate(1);
+}
+.profile .mapFrame #view {
+  width: 100%;
+  height: 60vh;
+  background: black;
+  display: none;
+}
+.profile .mapFrame #view.on {
+  display: block;
 }
 
 @media screen and (max-width: 1200px) {

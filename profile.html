@@ -15,12 +15,12 @@
       href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Sans+KR:wght@100..900&family=Orbitron:wght@400..900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" src="js/common.js"></script>
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9fe1412f4054f7a41e864440620cadf"
     ></script>
-    <script defer src="js/map.js"></script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/map.js"></script>
   </head>
 
   <body>
@@ -67,7 +67,14 @@
           >
         </article>
 
-        <div id="map"></div>
+        <ul class="btns">
+          <li class="btn">지도보기</li>
+          <li class="btn">로드뷰보기</li>
+        </ul>
+        <div class="mapFrame">
+          <div id="map" class="on"></div>
+          <div id="view"></div>
+        </div>
       </main>
 
       <footer>
