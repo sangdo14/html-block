@@ -350,5 +350,40 @@ body {
     width: 100%;
   }
 }
+.work {
+  width: 100%;
+}
+.work h1 {
+  font: 1.3rem/1 "orbitron";
+  margin-bottom: 40px;
+  text-align: left;
+}
+.work section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.work section article {
+  width: 32%;
+}
+.work section article h2 {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.work section article figure {
+  width: 100%;
+  height: 10vw;
+}
+.work section article p {
+  font-size: 0.6rem;
+  text-align: justify;
+  margin-bottom: 2px;
+}
+.work section article span {
+  font-size: 0.6rem;
+  color: orange;
+}
 
 /*# sourceMappingURL=style.css.map */
