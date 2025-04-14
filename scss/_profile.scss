@@ -107,6 +107,20 @@
   }
 }
 
+.btnColors {
+  margin-bottom: 50px auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
 // tablet
 @media screen and (max-width: variable.$wid_tablet) {
   main {
